@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Checker</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 300px;
+        }
+
+        h2 {
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background: #ff6b6b;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #ff4757;
+        }
+
+        #result {
+            margin-top: 15px;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Age Checker</h2>
+        <input type="number" id="ageInput" placeholder="Enter your age">
+        <button onclick="checkAge()">Check</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function checkAge() {
+            let age = document.getElementById("ageInput").value;
+            let result = document.getElementById("result");
+            if (age === "" || isNaN(age)) {
+                result.innerHTML = "Please enter a valid number.";
+                result.style.color = "yellow";
+            } else if (age <= 25) {
+                result.innerHTML = "Chod khaiya mor khankir chele under aged lifeless kothakar.";
+                result.style.color = "red";
+            } else {
+                result.innerHTML = "ho bujji tr boyosh 25 er beshi. ehon kita kortam? hat martam? jah chodanirput hat maira ghumai jah. madarchod aise ene bal falaite porte boh jah";
+                result.style.color = "lightgreen";
+            }
+        }
+    </script>
+</body>
+</html>
